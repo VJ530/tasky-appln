@@ -21,13 +21,84 @@
   </head>
 
   <body>
+<!-- Modal for UI display on Home Page -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Task Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body task__modal__body">
+        <!-- <p>JS text</p> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- button on smaller screen -->
+  <div class="add__new__btn__mobile__only d-md-none">
+    <button class="btn btn-primary  d-flex align-items-center gap-2" type="button" data-bs-toggle="modal"
+      data-bs-target="#addNewModal">
+      <i class="fas fa-plus"></i>
+      Add an item
+    </button>
+  </div>
+
+
+
+
+
+  <!-- Modal - is a card
+      Dialog - is a pop up --->
+  <div class="modal fade" id="addNewModal" tabindex="-1" aria-labelledby="addNewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addNewModalLabel">Add New Task</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            
+            <div class="mb-3">
+              <label for="imageURL" class="form-label">Image URL</label>
+              <input type="url" class="form-control" id="imageURL"  placeholder="https//example.com/image.png">
+            </div>
+            <div class="mb-3">
+              <label for="taskTitle" class="form-label">Task Title</label>
+              <input type="text" class="form-control" id="taskTitle" placeholder="Learn Web Development" required>
+            </div>
+            <div class="mb-3">
+              <label for="taskType" class="form-label">Task Type</label>
+              <input type="text" class="form-control" id="taskType" placeholder="Work..." required>
+            </div>
+            <div class="mb-3">
+              <label for="taskDescp" class="form-label">Task Description</label>
+              <textarea class="form-control" id="taskDescp" placeholder="Explain something about it..." required rows="4"></textarea>
+            </div>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+
+          </form>  
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+
     <!--  lg - large 
     md - medium 
     sm - sm
     bg - dark  ,bg - primary , inline style(background-color)
     -->
 
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-md bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Tasky</a>
         <button
@@ -49,9 +120,9 @@
           </ul>
           <form class="d-flex" role="search">
            
-            <button class="btn btn-primary  d-flex align-item-center gap-2" type="submit">
+            <button class="btn btn-primary  d-flex align-items-center gap-2" type="button" data-bs-toggle="modal" data-bs-target="#addNewModal">
                 <i class="fas fa-plus"></i>
-              Add an item
+            Add an item
             </button>
           </form>
         </div>
@@ -63,7 +134,7 @@
         <section class="mt-4">
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <div class="input-group flex-nowrap shadow-lg ">
+                    <div class="input-group flex-nowrap shadow-lg rounded">
                         
                         <input type="search" class="form-control" placeholder="Search Task" aria-label="Search Task"
                             aria-describedby="addon-wrapping">
@@ -73,6 +144,14 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- mt - margin -->
+        <section class="mt-4">
+          <div class="row task__contents">
+          <!-- <h1>This is a place where we will get all the cards</h1> -->
+
+          </div>
         </section>
     </div>
 
