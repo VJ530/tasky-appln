@@ -20,17 +20,36 @@
 
   </head>
 
-  <body>
+  <body onload="loadInitialData()">
 <!-- Modal for UI display on Home Page -->
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="showTask" tabindex="-1" aria-labelledby="showTaskLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Task Details</h1>
+        <h1 class="modal-title fs-5" id="showTaskLabel">Task Details</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body task__modal__body">
+        <!-- <p>JS text</p> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Open task button model -->
+<div class="modal fade" id="showTask" tabindex="-1" aria-labelledby="showTaskLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="showTaskLabel">Task Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body task__content">
         <!-- <p>JS text</p> -->
       </div>
       <div class="modal-footer">
@@ -41,6 +60,10 @@
   </div>
 </div>
 
+
+<!-- new card to be implemented -->
+
+
   <!-- button on smaller screen -->
   <div class="add__new__btn__mobile__only d-md-none">
     <button class="btn btn-primary  d-flex align-items-center gap-2" type="button" data-bs-toggle="modal"
@@ -49,9 +72,6 @@
       Add an item
     </button>
   </div>
-
-
-
 
 
   <!-- Modal - is a card
@@ -64,7 +84,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form onsubmit="return false">
             
             <div class="mb-3">
               <label for="imageURL" class="form-label">Image URL</label>
@@ -83,7 +103,8 @@
               <textarea class="form-control" id="taskDescp" placeholder="Explain something about it..." required rows="4"></textarea>
             </div>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="submit"
+            class="btn btn-primary" onclick="handleSubmit()">Save changes</button>
 
           </form>  
         </div>
@@ -97,7 +118,6 @@
     sm - sm
     bg - dark  ,bg - primary , inline style(background-color)
     -->
-
     <nav class="navbar navbar-expand-md bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Tasky</a>
