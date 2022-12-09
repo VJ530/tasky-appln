@@ -66,7 +66,7 @@
 
   <!-- button on smaller screen -->
   <div class="add__new__btn__mobile__only d-md-none">
-    <button class="btn btn-primary  d-flex align-items-center gap-2" type="button" data-bs-toggle="modal"
+    <button class="btn btn-primary  d-flex align-items-center gap-2" type="submit" data-bs-toggle="modal"
       data-bs-target="#addNewModal">
       <i class="fas fa-plus"></i>
       Add an item
@@ -138,13 +138,13 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
+          <!-- <form class="d-flex" role="search"> -->
            
-            <button class="btn btn-primary  d-flex align-items-center gap-2" type="button" data-bs-toggle="modal" data-bs-target="#addNewModal">
+            <button class="btn btn-primary  d-flex align-items-center gap-2" type="submit" data-bs-toggle="modal" data-bs-target="#addNewModal">
                 <i class="fas fa-plus"></i>
             Add an item
             </button>
-          </form>
+          <!-- </form> -->
         </div>
       </div>
     </nav>
@@ -157,7 +157,7 @@
                     <div class="input-group flex-nowrap shadow-lg rounded">
                         
                         <input type="search" class="form-control" placeholder="Search Task" aria-label="Search Task"
-                            aria-describedby="addon-wrapping">
+                            aria-describedby="addon-wrapping"  oninput="searchTask.apply(this,arguments)"/>
                             <span class="input-group-text" id="addon-wrapper">
                                 <i class="fas fa-search"></i>
                             </span>
